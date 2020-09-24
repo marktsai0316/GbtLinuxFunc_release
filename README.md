@@ -15,22 +15,22 @@ GbtLinuxFunc SDK is a C Library for GPIO/Watchdog function control under Ubuntu 
 
 
 # Exported Library:
+```C
+int GbtLinuxFuncDrv_Init();
+void GbtLinuxFuncDrv_Uninit(int fd);
 
-- int GbtLinuxFuncDrv_Init();
-- void GbtLinuxFuncDrv_Uninit(int fd);
+int DigitalIo_PinMode(int fd, int pin , int mode);
+int DigitalIo_DigitalWrite(int fd, int pin,int value );
+int DigitalIo_DigitalRead(int fd, int pin );
 
-- int DigitalIo_PinMode(int fd, int pin , int mode);
-- int DigitalIo_DigitalWrite(int fd, int pin,int value );
-- int DigitalIo_DigitalRead(int fd, int pin );
+int DebugPort_Write(int fd, unsigned char value );
 
-- int DebugPort_Write(int fd, unsigned char value );
+int WatchDog_Control(int fd, int interval); //0 : Disable  , 1~255 unit in second
+int WatchDog_Status(int fd, unsigned short *pTimeoutValue, unsigned short *pWdtStatus); 
+int WatchDog_BeatBeep(int fd, int Enable);
 
-- int WatchDog_Control(int fd, int interval); //0 : Disable  , 1~255 unit in second
-- int WatchDog_Status(int fd, unsigned short *pTimeoutValue, unsigned short *pWdtStatus); 
-- int WatchDog_BeatBeep(int fd, int Enable);
-
-- int SpeakerBeep_Control(int fd, unsigned short note,unsigned short duration);
-
+int SpeakerBeep_Control(int fd, unsigned short note,unsigned short duration);
+```
 # SDK Folder
 ```sh
 $ tree
