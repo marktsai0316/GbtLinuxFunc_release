@@ -32,6 +32,40 @@ GbtLinuxFunc SDK From Gigabyte
 
 - int SpeakerBeep_Control(int fd, unsigned short note,unsigned short duration);
 
+# SDK Folder
+```sh
+$ tree
+.
+├── Driver
+│   ├── GbtLinuxFuncDrv.4.18.0-20-generic.ko
+│   ├── GbtLinuxFuncDrv.4.18.0-21-generic.ko
+│   ├── GbtLinuxFuncDrv.4.18.0-25-generic.ko
+│   ├── GbtLinuxFuncDrv.5.0.0-20-generic.ko
+│   ├── GbtLinuxFuncDrv.5.0.0-25-generic.ko
+│   ├── GbtLinuxFuncDrv.5.3.0-62-generic.ko
+│   ├── GbtLinuxFuncDrv.5.4.0-47-generic.ko
+│   ├── GbtLinuxFuncDrv.5.4.0-48-generic.ko
+│   ├── install.sh
+│   └── uninstall.sh
+├── Examples
+│   ├── debugporttst
+│   ├── debugporttst.c
+│   ├── digitalIotst
+│   ├── digitalIotst.c
+│   ├── GbtLinuxFunc.c
+│   ├── GbtLinuxFunc.h
+│   ├── GbtLinuxFunc.o
+│   ├── Makefile
+│   ├── readme.txt
+│   ├── speakerbeeptst
+│   ├── speakerbeeptst.c
+│   ├── watchdogtst30
+│   ├── watchdogtst30.c
+│   ├── watchdogtst
+│   └── watchdogtst.c
+└── [Gigabyte] GbtLinuxFunc API User Guide.pdf
+
+```
 # Install GbtLinuxFuncDrv 
 
 ```sh
