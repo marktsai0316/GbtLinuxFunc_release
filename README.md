@@ -37,6 +37,10 @@ GbtLinuxFunc SDK From Gigabyte
 ```sh
 $ cd Driver
 $ sudo ./install.sh
+```
+If driver install success, you will see the following like-context.
+
+```sh
 filename:       /home/mark/GbtLinuxFunc/GbtLinuxFunc_release/Driver/./GbtLinuxFuncDrv.5.4.0-47-generic.ko
 version:        1.0.8
 license:        GPL
@@ -57,16 +61,18 @@ depends:        wmi
 retpoline:      Y
 name:           GbtLinuxFuncDrv
 vermagic:       5.4.0-47-generic SMP mod_unload 
-
 GbtLinuxFuncDrv           16384  0
-
 [74901.330051] GbtLinuxFuncDrv: GbtLinuxFunc module initial.
 [74901.330053] Identified model 'GA-IMB310TN' ID=0xA0
 [74901.330058] Force switch SIO mode from LPT to GPIO
 [74901.330625] I got: 131072 bytes of memory 
-
 245 GbtLinuxFunc
-
 crw------- 1 root root 245, 0  7月 21 13:00 /dev/GbtLinuxFunc
+```
 
+If driver install fail, you will see the following like-context.
+
+```sh
+Kernel 5.3.0-48-generic is not supported
+Please contact Gigabyte Software RD (mark@gigabyte.com)
 ```
