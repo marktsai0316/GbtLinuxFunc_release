@@ -15,7 +15,7 @@ GbtLinuxFunc SDK is a C Library for GPIO/Watchdog function control under Ubuntu 
 | GA-H110TN | 10-pin | |
 
 
-# Exported Library:
+# Exported Library API
 ```C
 int GbtLinuxFuncDrv_Init();
 void GbtLinuxFuncDrv_Uninit(int fd);
