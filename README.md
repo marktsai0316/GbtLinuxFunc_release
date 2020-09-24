@@ -115,7 +115,7 @@ Please contact Gigabyte Software RD (mark@gigabyte.com)
 $ cd Driver
 $ sudo ./uninstall.sh
 ```
-If driver uninstall success, you will get:
+If driver uninstall success, you will get context like as:
 ```sh
 [74908.137850] GbtLinuxFuncdrv: Goodbye, GIGABYTE!
 ```
