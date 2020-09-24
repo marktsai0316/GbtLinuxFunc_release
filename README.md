@@ -109,3 +109,13 @@ If driver install fail, you will see the following like-context.
 Kernel 5.3.0-48-generic is not supported
 Please contact Gigabyte Software RD (mark@gigabyte.com)
 ```
+# Uninstall GbtLinuxFuncDrv 
+
+```sh
+$ cd Driver
+$ sudo ./uninstall.sh
+```
+If driver uninstall success, you will get:
+```sh
+[74908.137850] GbtLinuxFuncdrv: Goodbye, GIGABYTE!
+```
