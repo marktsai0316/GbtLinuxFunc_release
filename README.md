@@ -1,7 +1,6 @@
-# GbtLinuxFunc_release
-GbtLinuxFunc SDK From Gigabyte
+# GbtLinuxFunc SDK From Gigabyte
 
-
+GbtLinuxFunc SDK is a C Library for GPIO/Watchdog function control under Ubuntu environment.
 
 # Supported Hardware :
 
