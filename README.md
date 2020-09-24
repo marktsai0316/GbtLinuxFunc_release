@@ -3,16 +3,16 @@
 GbtLinuxFunc SDK is a C Library for GPIO/Watchdog function control under Ubuntu environment.
 
 # Supported Hardware :
-| IPC/IOT Board | Digital IO | Watchdog|
+| IPC/IOT Board | Digital IO Type | Watchdog Support|
 | ------ | ---- | --- |
-| GA-SBC4200 | 26-pin | |
-| GA-SBC5005SE | NA | |
-| GA-IMB4100TN | 26-pin | |
-| GA-IMB310TN | 10-pin | |
-| GA-IMBLAP3450 | 26-pin | |
-| GA-IMBLAP3350 | 26-pin | |
-| GA-N3160TN | 26-pin | |
-| GA-H110TN | 10-pin | |
+| GA-SBC4200 | 26-pin | Yes |
+| GA-SBC5005SE | None | Yes |
+| GA-IMB4100TN | 26-pin | Yes |
+| GA-IMB310TN | 10-pin | Yes |
+| GA-IMBLAP3450 | 26-pin | Yes |
+| GA-IMBLAP3350 | 26-pin | Yes |
+| GA-N3160TN | 26-pin | Yes |
+| GA-H110TN | 10-pin | Yes |
 
 
 # Exported Library API
