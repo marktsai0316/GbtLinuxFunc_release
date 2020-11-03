@@ -132,4 +132,4 @@ Current Timeout value is 0 secs, WDT is Disabled //before setting
 Current Timeout value is 30 secs, WDT is Enabled //after setting
 $ sudo ./kernel_panic.sh
 ```
-
+After 30 secs, System will be WDT reset......
