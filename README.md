@@ -121,3 +121,13 @@ If driver uninstall success, you will get context like as:
 ```sh
 [74908.137850] GbtLinuxFuncdrv: Goodbye, GIGABYTE!
 ```
+# How to force system crash and test WDT function ?
+
+A watchdog timer (sometimes called a computer operating properly or COP timer, or simply a watchdog) is an electronic or software timer that is used to detect and recover from computer malfunctions.
+
+```sh
+$ sudo chmod +x kernel_panic.sh
+$ sudo ./watchdogtst30
+$ sudo ./kernel_panic.sh
+```
+
