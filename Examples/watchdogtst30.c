@@ -23,7 +23,7 @@ int main(void)
 
 	WatchDog_Status(fd,&TimeoutValue,&WdtStatus);
 	printf("Current Timeout value is %d secs, WDT is %s\n",TimeoutValue ,(WdtStatus == 0) ? "Disabled" : "Enabled" );
-	WatchDog_Control(fd, 30);  //WDT Timeout Value be set as 15 secs and enable function
+	WatchDog_Control(fd, 30);  //WDT Timeout Value be set as 30 secs and enable function
 	WatchDog_Status(fd,&TimeoutValue,&WdtStatus);
 	printf("Current Timeout value is %d secs, WDT is %s\n",TimeoutValue ,(WdtStatus == 0) ? "Disabled" : "Enabled" );
 	
