@@ -128,6 +128,8 @@ A watchdog timer (sometimes called a computer operating properly or COP timer, o
 ```sh
 $ sudo chmod +x kernel_panic.sh
 $ sudo ./watchdogtst30
+Current Timeout value is 0 secs, WDT is Disabled //before setting
+Current Timeout value is 30 secs, WDT is Enabled //after setting
 $ sudo ./kernel_panic.sh
 ```
 
