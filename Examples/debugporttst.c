@@ -18,6 +18,10 @@
 int main(void)
 {
 	int fd=GbtLinuxFuncDrv_Init();
+	if (fd == -1 ) 
+	{
+		return -1;
+	}
 	DebugPort_Write(fd, 0xAA );
 	usleep(1000000*1); //one second
 	DebugPort_Write(fd, 0x55 );
