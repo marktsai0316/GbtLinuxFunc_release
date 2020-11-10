@@ -13,6 +13,20 @@
 
 #include "GbtLinuxFunc.h"
 
+
+int main1(void)
+{
+	int fd=GbtLinuxFuncDrv_Init();
+	int i;
+	for(i=1;i<=21;i++)
+	{
+		SpeakerBeep_Control(fd,i,500); //set duration == 500 milisecond
+	}
+
+	GbtLinuxFuncDrv_Uninit(fd);
+	return 0;
+}
+
 //Example:
 /*
 ref to http://www.ic.unicamp.br/~celio/mc404s102/pcspeaker/InternalSpeaker.htm

@@ -79,8 +79,10 @@ int DigitalIo_DigitalRead(int fd, int pin );
 
 int DebugPort_Write(int fd, unsigned char value );
 
-int WatchDog_Control(int fd, int interval); //0 : Disable  , 1~255 unit in second
-int WatchDog_Status(int fd, unsigned short *pTimeoutValue, unsigned short *pWdtStatus); 
+int WatchDog_Control(int fd, unsigned int interval,unsigned int AutoBeatEn); //0 : Disable  , 1~255 unit in second
+int WatchDog_Status(int fd, unsigned short *pTimeoutValue, unsigned short *pAutoBeatStatus); 
+int WatchDog_AutoBeat(int fd, int Enable);
+int WatchDog_KeepAlive(int fd, unsigned short *pTimeoutValue, unsigned short *pWdtStatus); 
 int WatchDog_BeatBeep(int fd, int Enable);
 
 int SpeakerBeep_Control(int fd, unsigned short note,unsigned short duration);
@@ -103,7 +105,9 @@ typedef struct _DIGITALIO {
 
 #define GBTLINUXFUNC_WATCHDOG_CONTROL	_IOW(0xbb, 0x25, unsigned int)
 #define GBTLINUXFUNC_WATCHDOG_STATUS	_IOR(0xbb, 0x26, unsigned int)
-#define GBTLINUXFUNC_WATCHDOG_BEATBEEP	_IOW(0xbb, 0x27, unsigned int)
+#define GBTLINUXFUNC_WATCHDOG_AUTOBEAT	_IOW(0xbb, 0x27, unsigned int)
+#define GBTLINUXFUNC_WATCHDOG_KEEPALIVE	_IOR(0xbb, 0x28, unsigned int)
+#define GBTLINUXFUNC_WATCHDOG_BEATBEEP	_IOW(0xbb, 0x29, unsigned int)
 
 typedef struct _SPEAKERBEEPIO {
 	unsigned short type;

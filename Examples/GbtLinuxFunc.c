@@ -73,9 +73,17 @@ int DigitalIo_DigitalRead(int fd, int pin )
 	return data.u.value;
 }
 
-int WatchDog_Control(int fd, int interval)
+int WatchDog_Control(int fd, unsigned int interval,unsigned int AutoBeatStatus)
 {
-	int data=interval;
+	unsigned int data=interval;
+	if(AutoBeatStatus)
+	{
+		data |= 0x80000000; //set autobeat=1
+	}
+	else
+	{
+		data |= 0x00000000; //set autobeat=0
+	}
 	if (ioctl(fd, GBTLINUXFUNC_WATCHDOG_CONTROL, &data)) {
 		perror("GBTLINUXFUNC_WATCHDOG_CONTROL failed,Maybe have Invalid argument");
 		return -1;
@@ -83,7 +91,7 @@ int WatchDog_Control(int fd, int interval)
 	return 0;
 }
 
-int WatchDog_Status(int fd, unsigned short *pTimeoutValue, unsigned short *pWdtStatus)
+int WatchDog_Status(int fd, unsigned short *pTimeoutValue, unsigned short *pAutoBeatStatus)
 {
 	int Value;
 	if (ioctl(fd, GBTLINUXFUNC_WATCHDOG_STATUS, &Value)) {
@@ -92,10 +100,30 @@ int WatchDog_Status(int fd, unsigned short *pTimeoutValue, unsigned short *pWdtS
 	}
 	
 	*pTimeoutValue = (unsigned short)(Value);
+	*pAutoBeatStatus = (unsigned short)(Value>>16);
+	return 0;
+}
+int WatchDog_AutoBeat(int fd, int Enable)
+{
+	int data=Enable;
+	if (ioctl(fd, GBTLINUXFUNC_WATCHDOG_AUTOBEAT, &data)) {
+		perror("GBTLINUXFUNC_WATCHDOG_AUTOBEAT failed,Maybe have Invalid argument");
+		return -1;
+	}
+	return 0;
+}
+int WatchDog_KeepAlive(int fd, unsigned short *pTimeoutValue, unsigned short *pWdtStatus)
+{
+	int Value;
+	if (ioctl(fd, GBTLINUXFUNC_WATCHDOG_KEEPALIVE, &Value)) {
+		perror("GBTLINUXFUNC_WATCHDOG_STATUS failed,Maybe have Invalid argument");
+		return -1;
+	}
+	*pTimeoutValue = (unsigned short)(Value);
 	*pWdtStatus = (unsigned short)(Value>>16);
 	return 0;
 }
-
+/* 
 int WatchDog_BeatBeep(int fd, int Enable)
 {
 	int data=Enable;
@@ -105,7 +133,7 @@ int WatchDog_BeatBeep(int fd, int Enable)
 	}
 	return 0;
 }
-
+*/
 int DebugPort_Write(int fd, unsigned char value )
 {
 	if (ioctl(fd, GBTLINUXFUNC_DEBUGPORT_WRITE, &value)) {
