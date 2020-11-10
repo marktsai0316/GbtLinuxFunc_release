@@ -24,25 +24,19 @@ int DigitalIo_PinMode(int fd, int pin , int mode);
 int DigitalIo_DigitalWrite(int fd, int pin,int value );
 int DigitalIo_DigitalRead(int fd, int pin );
 
-int WatchDog_Control(int fd, int interval); //0 : Disable  , 1~255 unit in second
-int WatchDog_Status(int fd, unsigned short *pTimeoutValue, unsigned short *pWdtStatus); 
-int WatchDog_BeatBeep(int fd, int Enable);
+int WatchDog_Control(int fd, unsigned int interval,unsigned int AutoBeatEn); //0 : Disable  , 1~255 unit in second  
+int WatchDog_Status(int fd, unsigned short *pTimeoutValue, unsigned short *pAutoBeatStatus); 
+int WatchDog_KeepAlive(int fd, unsigned short *pTimeoutValue, unsigned short *pAutoBeatStatus); 
+
 
 int DebugPort_Write(int fd, unsigned char value );
 
-int SpeakerBeep_Control(int fd, unsigned short note,unsigned short duration);
 ```
 # SDK Folder
 ```sh
 $ tree
 .
 ├── Driver
-│   ├── GbtLinuxFuncDrv.4.18.0-20-generic.ko
-│   ├── GbtLinuxFuncDrv.4.18.0-21-generic.ko
-│   ├── GbtLinuxFuncDrv.4.18.0-25-generic.ko
-│   ├── GbtLinuxFuncDrv.5.0.0-20-generic.ko
-│   ├── GbtLinuxFuncDrv.5.0.0-25-generic.ko
-│   ├── GbtLinuxFuncDrv.5.3.0-62-generic.ko
 │   ├── GbtLinuxFuncDrv.5.4.0-47-generic.ko
 │   ├── GbtLinuxFuncDrv.5.4.0-48-generic.ko
 │   ├── GbtLinuxFuncDrv.5.4.0-52-generic.ko
@@ -127,7 +121,7 @@ A watchdog timer (sometimes called a computer operating properly or COP timer, o
 
 ```sh
 $ sudo chmod +x kernel_panic.sh
-$ sudo ./watchdogtst30
+$ sudo ./watchdogtst
 Current Timeout value is 0 secs, WDT is Disabled //before setting
 Current Timeout value is 30 secs, WDT is Enabled //after setting
 $ sudo ./kernel_panic.sh
