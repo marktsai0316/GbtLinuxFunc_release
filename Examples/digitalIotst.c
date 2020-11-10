@@ -39,6 +39,10 @@ int test1(void)
 
 	int fd=GbtLinuxFuncDrv_Init();
 	int ledPin = PIN1;
+	if (fd == -1 ) 
+	{
+		return -1;
+	}
 
 	DigitalIo_PinMode(fd, ledPin, OUTPUT);
 	//sleep(1); // one second
