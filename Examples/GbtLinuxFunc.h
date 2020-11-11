@@ -82,7 +82,7 @@ int DebugPort_Write(int fd, unsigned char value );
 int WatchDog_Control(int fd, unsigned int interval,unsigned int AutoBeatEn); //0 : Disable  , 1~255 unit in second
 int WatchDog_Status(int fd, unsigned short *pTimeoutValue, unsigned short *pAutoBeatStatus); 
 int WatchDog_AutoBeat(int fd, int Enable);
-int WatchDog_KeepAlive(int fd, unsigned short *pTimeoutValue, unsigned short *pWdtStatus); 
+int WatchDog_KeepAlive(int fd, unsigned short *pTimeoutValue, unsigned short *pAutoBeatStatus); 
 int WatchDog_BeatBeep(int fd, int Enable);
 
 int SpeakerBeep_Control(int fd, unsigned short note,unsigned short duration);
