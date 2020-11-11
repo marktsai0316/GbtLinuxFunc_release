@@ -36,6 +36,8 @@ int DebugPort_Write(int fd, unsigned char value );
 ```sh
 $ tree
 .
+├── BIOS
+│   └── SBC5005SESD.F2b
 ├── Driver
 │   ├── GbtLinuxFuncDrv.5.4.0-47-generic.ko
 │   ├── GbtLinuxFuncDrv.5.4.0-48-generic.ko
