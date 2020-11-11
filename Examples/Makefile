@@ -1,4 +1,4 @@
-all : WATCHDOG_AUTOBEAT WATCHDOG_KEEPALIVE DIGITALIO DEBUGPORT SPEAKERBEEP
+ all : WATCHDOG WATCHDOG_AUTOBEAT WATCHDOG_KEEPALIVE DIGITALIO DEBUGPORT SPEAKERBEEP
 #Which compiler
 g = g++
 
@@ -19,6 +19,12 @@ DIGITALIO:	GbtLinuxFunc.o digitalIotst.o
 
 digitalIotst.o:	digitalIotst.c GbtLinuxFunc.h
 	$(g) $(CFLAGS) -c digitalIotst.c
+
+WATCHDOG:	GbtLinuxFunc.o watchdogtst.o 
+	$(g) -o watchdogtst watchdogtst.o GbtLinuxFunc.o -lpthread
+
+watchdogtst.o:	watchdogtst.c GbtLinuxFunc.h
+	$(g) $(CFLAGS) -c watchdogtst.c
 
 WATCHDOG_AUTOBEAT:	GbtLinuxFunc.o watchdogtst_autobeat.o 
 	$(g) -o watchdogtst_autobeat watchdogtst_autobeat.o GbtLinuxFunc.o -lpthread
@@ -45,4 +51,4 @@ speakerbeeptst.o:	speakerbeeptst.c GbtLinuxFunc.h
 	$(g) $(CFLAGS) -c speakerbeeptst.c
 
 clean:
-	rm -f *.o *~ core watchdogtst_autobeat watchdogtst_keepalive  digitalIotst debugporttst speakerbeeptst
+	rm -f *.o *~ core watchdogtst watchdogtst_autobeat watchdogtst_keepalive  digitalIotst debugporttst speakerbeeptst
