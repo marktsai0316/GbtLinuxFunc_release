@@ -42,6 +42,8 @@ $ tree
 │   ├── GbtLinuxFuncDrv.5.4.0-47-generic.ko
 │   ├── GbtLinuxFuncDrv.5.4.0-48-generic.ko
 │   ├── GbtLinuxFuncDrv.5.4.0-52-generic.ko
+│   ├── GbtLinuxFuncDrv.5.4.0-53-generic.ko
+│   ├── GbtLinuxFuncDrv.5.4.0-54-generic.ko
 │   ├── install.sh
 │   └── uninstall.sh
 ├── Examples
